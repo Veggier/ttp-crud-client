@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CampusCard from "./CampusCard";
+import CampusForm from "./CampusForm";
 
 class Campuses extends Component {
   constructor(props) {
@@ -25,6 +26,18 @@ class Campuses extends Component {
     };
   }
 
+  handleAddCampus = (name) => {
+    console.log(name);
+    const newState = { ...this.state };
+    const newCampus = {
+      name: name,
+      imageUrl: "https://via.placeholder.com/150",
+      students: 0,
+    };
+    newState.campuses = newState.campuses.concat(newCampus);
+    this.setState(newState);
+  };
+
   render() {
     const campuses = () =>
       this.state.campuses.map((campus) => {
@@ -38,7 +51,12 @@ class Campuses extends Component {
         );
       });
 
-    return <div className="row campuses">{campuses()}</div>;
+    return (
+      <>
+        <CampusForm onSubmit={this.handleAddCampus} />
+        <div className="row campuses">{campuses()}</div>
+      </>
+    );
   }
 }
 
