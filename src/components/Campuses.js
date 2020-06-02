@@ -27,7 +27,6 @@ class Campuses extends Component {
   }
 
   handleAddCampus = (name) => {
-    console.log(name);
     const newState = { ...this.state };
     const newCampus = {
       name: name,
