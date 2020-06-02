@@ -4,7 +4,7 @@ import CampusCard from "./CampusCard";
 class Campuses extends Component {
   render() {
     return (
-      <div className="campuses">
+      <div className="row campuses">
         <CampusCard
           name="Brooklyn College"
           imageUrl="https://via.placeholder.com/150"

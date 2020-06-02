@@ -6,7 +6,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Campuses />
+        <div class="container">
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              CRUD App
+            </a>
+          </nav>
+          <Campuses />
+        </div>
       </div>
     );
   }
